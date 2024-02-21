@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Symplectic and Euclidean Billiards</title>
+     <style>
+        .track {
+            background-color:cornsilk ;
+            height: 600px;
+            width: 600px;
+        }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.1.1/chart.umd.js" ></script>
+    
+</head>
+<body>
+	<h2>Symplectic and Euclidean Billiards</h2>
+    
+   
+
+    <table>
+        <tr>
+            <td>
+                <label for ="batchmode">Batch mode</label>
+                <input type = "checkbox" id ="batchmode" value = "0">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for ="symplecticmode">Use symplectic</label>
+                <input type = "checkbox" id ="symplecticmode" checked value = "true">
+            </td>
+        </tr>
+
+        <tr>
+            <td><label for= "polygontype">Polygon type</label></td>
+            <td><select name = "polygontype" id= "polygontype">
+                <option value="regular" >Regular Polygon</option>
+                <option value="convex">Convex Polygon</option>
+                <option value="nonconvex" >Non Convex Polygon</option>
+                <option value="rectangle">Rectangle</option>
+                <option value="star">Regular Star</option>
+            </select>
+            </td>
+        </tr> 
+        <tr>
+            <td>
+                <label for = "vertices">Number of vertices</label>
+            </td>
+            
+            <td>
+                <input type="number" id="vertices" value="3" min="3" max="1000"> 
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for = "startangle">Start angle</label>
+            </td>
+            
+            <td>
+                <input type="number" id="startangle" value="20" min="1" max="179"> 
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for = "numballs">Number of balls</label>
+            </td>
+            <td>
+                <input type="number" id="numballs" value="1" min="1" max="35"> 
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for = "trajectories" id = "trajectories_label">Number of trajectories</label>
+            </td>
+            <td>
+                <input type="number" id="trajectories" value="3" min="0" max="1000"> 
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <class="slidecontainer">
+                <label for = "myRange" id = "myRange_label">Speed</label>
+            </td>
+            <td>
+                <input type="range" min="1" max="50" value="3" class="slider" id="myRange">
+            </td>
+        </tr>
+           
+    </table>
+    <p>
+        <button id="start">Start</button>
+    </p>
+    
+    <canvas  id= "billiardscanvas" class = "track"></canvas>
+    <canvas id = "scatterchart" style = "width:100%; max-width:600px; max-height:400px"></canvas>
+    <script src = "main.js" type = "module"></script>
+</body>
+</html>
